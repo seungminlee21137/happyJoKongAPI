@@ -1,3 +1,7 @@
+## Mysql 8 설치
+1. Mysql/mysql_create.sql 실행
+2. application.properties 업데이트
+
 ## Authentication with Spring Boot and Security and JWT ##
 
 Authentication API using Spring Boot + Spring Security, JWT, AWS RDS (MySQL). Includes Registration and Login.
@@ -39,3 +43,4 @@ USE:
  #   h a p p y J o K o n g A P I 
  
  
+
