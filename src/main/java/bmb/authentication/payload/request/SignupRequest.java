@@ -10,13 +10,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
 
-/**
- *
- * @author bmares008
- */
 @Data
 public class SignupRequest {
-   @NotBlank
+
+  @NotBlank
   @Size(min = 3, max = 20)
   private String username;
 
@@ -25,8 +22,12 @@ public class SignupRequest {
   @Email
   private String email;
 
+  @NotBlank
+  @Size(min = 2, max = 500)
+  private String profileName;
+
   private Set<String> role;   
   @NotBlank
-  @Size(min = 6, max = 40)
+  @Size(min = 3, max = 40)
   private String password;
 }

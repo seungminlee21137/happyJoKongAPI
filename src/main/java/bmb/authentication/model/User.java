@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -20,10 +21,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
 
-/**
- *
- * @author bmares008
- */
 @Entity
 @Table(name = "user")
 @Data
@@ -46,6 +43,11 @@ public class User {
     private String email;
 
     @NotBlank
+    @Column(name = "profile_name")
+    @Size(max = 500)
+    private String profileName;
+
+    @NotBlank
     @Size(max = 120)
     private String password;
 
@@ -55,9 +57,10 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String profileName, String password) {
         this.username = username;
         this.email = email;
+        this.profileName = profileName;
         this.password = password;
     }
 
